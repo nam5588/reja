@@ -1,4 +1,5 @@
 console.log("Web Serverni Boshlash");
+const { log } = require("console");
 const express = require("express");
 const app = express(); // expressning objecti olindi
 const http = require('http');
@@ -17,10 +18,16 @@ app.set("view engine", "ejs");  // views folder ichidan o'qiydi
 
 // 4: routing code
 // hamma / ga kelganlarga pastdagi qator chiqadi
-app.get("/", function (req, res) {
-    res.end(`<a href="http://localhost:3000/hello"> Hello page </a> <br/> <a href="http://localhost:3000/gift"> Gift page </a>`);
-});
 
+app.post('/create-item', (req, res) => {
+    console.log(req.body);
+    res.json({test:"succes"}); 
+})
+
+app.get("/", function (req, res) {
+    res.render('harid')
+});
+/*
 app.get("/hello", function (req, res) {
     res.end(`<h1 style="background: red">Hello World! <br/> Express</h1> <br/> <a href="http://localhost:3000">Back</a>`);
 });
@@ -28,9 +35,10 @@ app.get("/hello", function (req, res) {
 app.get("/gift", function (req, res) {
     res.end(`<h1 style="background: yellow">Your are in gift page</h1> <br/> <a href="http://localhost:3000">Back</a>`);
 });
+*/
 
 const server = http.createServer(app);
 let PORT = 3000
-server.listen(PORT, function(){
+server.listen(PORT, function () {
     console.log(`The server is running succesfully on port: ${PORT}`);
 });

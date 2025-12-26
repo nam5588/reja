@@ -1,13 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio by ADAM</title>
+    <link rel="stylesheet" href="/main.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.ss" rel="stylesheet" />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <h1>Welcome</h1>    
+    <div class="frame">
+        <div class="main_frame">
+            <div class="left_frame">
+                <div class="left_1">
+                    <img class="profile_img" src="images/profile.png" alt="">
+                    <div class="name">
+                        <%=user.name%>
+                    </div>
+                    <div class="profession">
+                        <%=user.profession%>
+                    </div>
+                    <div class="social_icons">
+                        <a href="https://www.facebook.com/">
+                            <div class="icon">
+                                <img class="icon_1" src="icon/Icons-facebook.svg">
+                            </div>
+                        </a>
+                        <a href="https://www.instagram.com/na_m5588/">
+                            <div class="icon">
+                                <img class="icon_1" src="icon/Icons-instagram.svg">
+                            </div>
+                        </a>
+                        <a href="https://www.linkedin.com/in/mukhammad-numonkhujaev-3122b1361/">
+                            <div class="icon">
+                                <img class="icon_1" src="icon/Icons-linkedin.svg">
+                            </div>
+                            <a href="https://t.me/na_mukhammad/">
+                            </a>
+                            <div class="icon">
+                                <img class="icon_1" src="icon/Icons-twitter.svg">
+                            </div>
+                        </a>
+                        <a href="https://www.youtube.com/@muhammadnomonhojaev">
+                            <div class="icon">
+                                <img class="icon_1" src="icon/Icons-Youtube.svg">
+                            </div>
+                        </a>
+                        <a href="https://nam5588.github.io/portfolio/">
+                            <div class="icon">
+                                <img class="icon_1" src="icon/Icons-dribbble.svg">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="marginer"></div>
+                <div class="left_2">
+                    <div class="personal_info">
+                        <div class="info info_title">Age:</div>
+                        <div class="info">
+                            <%=user.age%>
+                        </div>
+                    </div>
+                    <div class="personal_info">
+                        <div class="info info_title">Residence: </div>
+                        <div class="info">
+                            <%=user.residence%>
+                        </div>
+                    </div>
+                    <div class="personal_info">
+                        <div class="info info_title">Freelance: </div>
+                        <div style="color: green" class="info">Available</div>
+                    </div>
+                    <div class="personal_info">
+                        <div class="info info_title">Adress: </div>
+                        <div class="info">
+                            <%=user.adress%>
+                        </div>
+                    </div>
+                </div>
+                <div class="marginer"></div>
+                <div class="left_3">
+                    <div class="languages_title">
+                        Languages
+                    </div>
+                    <div class="languages">
+                        <div class="language">
+                            <%=user.languages[0]%>
+                        </div>
+                        <div class="language level">100%</div>
+                    </div>
+                    <img src="icon/Line.svg">
+                    <div class="languages">
+                        <div class="language">
+                            <%=user.languages[1]%>
+                        </div>
+                        <div class="language level">100%</div>
+                    </div>
+                    <img src="icon/Line.svg">
+                    <div class="languages">
+                        <div class="language">
+                            <%=user.languages[2]%>
+                        </div>
+                        <div class="language level">100%</div>
+                    </div>
+                    <img src="icon/Line.svg">
+                </div>
+                <div class="marginer"></div>
+                <div class="left_4">
+                    <div class="skills_title">
+                        Skills
+                    </div>
+                    <div class="skills">
+                        <div class="skill">
+                            <%=user.skills[0]%>
+                        </div>
+                        <div class="skill level">100%</div>
+                    </div>
+                    <img src="icon/Line.svg">
+                    <div class="skills">
+                        <div class="skill">
+                            <%=user.skills[1]%>
+                        </div>
+                        <div class="skill level">100%</div>
+                    </div>
+                    <img src="icon/Line.svg">
+                    <div class="skills">
+                        <div class="skill">
+                            <%=user.skills[2]%>
+                        </div>
+                        <div class="skill level">100%</div>
+                    </div>
+                    <img src="icon/Line.svg">
+                    <div class="skills">
+                        <div class="skill">
+                            <%=user.skills[3]%>
+                        </div>
+                        <div class="skill level">100%</div>
+                    </div>
+                    <img src="icon/Line.svg">
+                    <div class="skills">
+                        <div class="skill">
+                            <%=user.skills[4]%>
+                        </div>
+                        <div class="skill level">100%</div>
+                    </div>
+                    <img src="icon/Line.svg">
+                </div>
+                <div class="marginer"></div>
+                <div class="left_5">
+                    <div class="extra_skills_title">
+                        Extra Skills
+                    </div>
+                    <div class="extra_skills">
+                        <img class="exIcon" src="icon/extraIcon.svg">
+                        <div class="extra_skill">
+                            <%=user.extra_skills[0]%>
+                        </div>
+                    </div>
+                    <div class="extra_skills">
+                        <img class="exIcon" src="icon/extraIcon.svg">
+                        <div class="extra_skill">
+                            <%=user.extra_skills[1]%>
+                        </div>
+                    </div>
+                    <div class="extra_skills">
+                        <img class="exIcon" src="icon/extraIcon.svg">
+                        <div class="extra_skill">
+                            <%=user.extra_skills[2]%>
+                        </div>
+                    </div>
+                    <div class="extra_skills">
+                        <img class="exIcon" src="icon/extraIcon.svg">
+                        <div class="extra_skill">
+                            <%=user.extra_skills[3]%>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="midd_frame">
+                <div class="midd_1">
+                    <img class="decor_icon decor_icon_1" src="box_images/i1.svg">
+                    <img class="decor_icon decor_icon_2" src="box_images/i2.svg">
+                    <img class="decor_icon decor_icon_3" src="box_images/i3.svg">
+                    <img class="decor_icon decor_icon_4" src="box_images/i4.svg">
+                    <img class="decor_icon decor_icon_5" src="box_images/i5.svg">
+                    <div class="midd_info">
+                        <div class="info_title">
+                            <%=user.profession%> in </br>
+                                <%=user.work_place%>
+                        </div>
+                        <div class="info_description">
+                            <%=user.about_me%>
+                        </div>
+                        <button class="info_btn">HIRE ME <img style="margin-left: 12px;" src="icon/Vector.svg"></button>
+                    </div>
+                    <div class="midd_photo">
+                        <img class="midd_photo_org" src="images/photo-1.png">
+                    </div>
+                </div>
+                <div class="midd_2">
+                    <div class="midd_info">
+                        <div class="midd_info_title">My Services</div>
+                        <div class="midd_info_description">
+                            <%=user.service_des%>
+                        </div>
+                    </div>
+                    <div class="midd_box">
+                        <div class="box">
+                            <img src="box_images/coding.svg" class="box_icon">
+                            <p class="box_title">web development</p>
+                            <p class="box_description">blog, e-commerce</p>
+                        </div>
+                        <div class="box">
+                            <img src="box_images/illustration.svg" class="box_icon">
+                            <p class="box_title">uI/uX design</p>
+                            <p class="box_description">Mobile app, website design</p>
+                        </div>
+                        <div class="box">
+                            <img src="box_images/Microphone.svg" class="box_icon">
+                            <p class="box_title">sound design</p>
+                            <p class="box_description">Voice Over, Beat Making</p>
+                        </div>
+                        <div class="box">
+                            <img src="box_images/game-development.svg" class="box_icon">
+                            <p class="box_title">game design</p>
+                            <p class="box_description">Character Design, Props & Objects</p>
+                        </div>
+                        <div class="box">
+                            <img src="box_images/Photographer.svg" class="box_icon">
+                            <p class="box_title">photography</p>
+                            <p class="box_description">portrait, product photography</p>
+                        </div>
+                        <div class="box">
+                            <p class="box_title">advertising</p>
+                            <p style="width: 260px; text-align: center;" class="box_description">Lorem ipsum dolor sit
+                                amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi.
+                            </p>
+                            <a class="order_link" href="https://t.me/na_mukhammad/">ORDER NOW > </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right_frame">
+                <img class="right_icons" src="menu_icon/Contrast.svg">
+
+                <div class="menu_right">
+                    <img class="active_message" src="menu_icon/Union.svg">
+                    <p class="active_message_text">HOME</p>
+                    <a href="">
+                        <div class="icon_decor active">
+                            <img src="menu_icon/Home.svg">
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="icon_decor">
+                            <img src="menu_icon/file-code.svg">
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="icon_decor">
+                            <img src="menu_icon/cv.svg">
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="icon_decor">
+                            <img src="menu_icon/Vector.svg">
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="icon_decor">
+                            <img src="menu_icon/Blog.svg">
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="icon_decor">
+                            <img src="menu_icon/Contact.svg">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

@@ -1,0 +1,49 @@
+{
+  "name": "Adam",
+  "profession": "Software Engineer",
+  "age": 19,
+  "residence": "S. Korea",
+  "adress": "S. Korea, Seoul",
+  "languages": ["Uzbek", "Korean", "English", "Russian"],
+  "skills": ["Html", "Css", "Js", "NodeJS", "Python", "JAVA"],
+  "extra_skills": [
+    "Bootstrap, Materialize",
+    "Styling, Sass",
+    "Django, Flask",
+    "GIT Knowledge"
+  ],
+  "work_place": "IT Company",
+  "service_des": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat",
+  "about_me": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, volutpat feugiat placerat lobortis. Natoq",
+  "city": "Namangan",
+  "title": ["Flower", "Seedlings", "Gardner", "Old", "New"],
+  "flower _desc": [
+    "What is a Flower?",
+    "What is a Seedling?",
+    "Who is Gardner?"
+  ],
+  "flower_name": [
+    "Tulip",
+    "Daffodil",
+    "Poppy",
+    "Sunflower",
+    "Bluebell",
+    "Rose",
+    "Snowdrop",
+    "Cherry",
+    "blossom"
+  ],
+  "flower_price": [
+    "15$",
+    "25$",
+    "12$",
+    "20$",
+    "35$",
+    "30$",
+    "22$",
+    "19$",
+    "9$"
+  ],
+  "famous_words": ["World is Beautiful with Flowers"],
+  "famous _name": ["Muhammad Adam"]
+}

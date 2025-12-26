@@ -1,8 +1,19 @@
 console.log("Web Serverni Boshlash");
-const { log } = require("console");
+const { log, error } = require("console");
 const express = require("express");
 const app = express(); // expressning objecti olindi
 const http = require('http');
+const fs = require("fs");
+
+
+let user;
+fs.readFile("database/user.json", "utf-8", (err, data) => {
+    if (err) {
+        console.log("ERROR", err);  
+    } else {
+        user = JSON.parse(data);
+    }
+})
 
 // 1: kirish code
 app.use(express.static("public")); // clientlar uchun public folderni ochib berdik
@@ -18,10 +29,13 @@ app.set("view engine", "ejs");  // views folder ichidan o'qiydi
 
 // 4: routing code
 // hamma / ga kelganlarga pastdagi qator chiqadi
-
 app.post('/create-item', (req, res) => {
     console.log(req.body);
-    res.json({test:"succes"}); 
+    res.json({ test: "succes" });
+})
+
+app.get('/author', (req, res) => {
+    res.render('author', { user: user })
 })
 
 app.get("/", function (req, res) {

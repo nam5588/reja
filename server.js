@@ -1,5 +1,4 @@
 console.log("Web Serverni Boshlash");
-const { log, error } = require("console");
 const express = require("express");
 const app = express(); // expressning objecti olindi
 const http = require('http');
@@ -9,25 +8,25 @@ const fs = require("fs");
 let user;
 fs.readFile("database/user.json", "utf-8", (err, data) => {
     if (err) {
-        console.log("ERROR", err);  
+        console.log("ERROR", err);
     } else {
         user = JSON.parse(data);
     }
 })
 
-// 1: kirish code
-app.use(express.static("public")); // clientlar uchun public folderni ochib berdik
-app.use(express.json()); // kirib kelayotgan json formatni objectga uguradi
-app.use(express.urlencoded({ extended: true })); // trad. html formdan post qilingan narsalarni qabul qiladi
+// 1: Kirish code                       // Bu qismdagi use bu => DP => bog'lab beryabdi
+app.use(express.static("public"));      // Clientlar uchun public folderni ochib berdik
+app.use(express.json());                // Kirib kelayotgan json formatni objectga uguradi
+app.use(express.urlencoded({ extended: true }));    // Trad. HTML formdan post qilingan narsalarni togri qabul qiladi
 
-// 2: session code
+// 2: Session code
 
 // BSSR backend side site rendering || backendda fronted qurish
-// 3: views code
-app.set("views", "views");      // folderni korsatdik | bu qator folder nomi bilan birxil bolshi kk
-app.set("view engine", "ejs");  // views folder ichidan o'qiydi
+// 3: Views code
+app.set("views", "views");      // Folderni korsatdik => 1 o'zgarmaydi 2 folder nomi bilan mos bolishi kerak
+app.set("view engine", "ejs");  // views folder ichidan o'qiydi EJS bilan [biz signal berdik shu engine`da bolaman]
 
-// 4: routing code
+// 4: Routing code      -       qaymoq joyi
 // hamma / ga kelganlarga pastdagi qator chiqadi
 app.post('/create-item', (req, res) => {
     console.log(req.body);

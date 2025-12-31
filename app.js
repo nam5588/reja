@@ -1,4 +1,5 @@
 console.log("Web Serverni Boshlash");
+const { log } = require("console");
 const express = require("express");
 const app = express(); // expressning objecti olindi
 const fs = require("fs");
@@ -32,14 +33,32 @@ app.set("view engine", "ejs");  // views folder ichidan o'qiydi EJS bilan [biz s
 // 4: Routing code      -       qaymoq joyi
 // hamma / ga kelganlarga pastdagi qator chiqadi
 app.get("/", function (req, res) {
-    res.render('reja')
+    console.log('user entered /');
+    db.collection("plans").find().toArray((err, data) => {
+        if (err) {
+            console.log(err);
+            res.end("something went wrong")
+        } else {
+            console.log(data);
+            res.render('reja', { items: data });
+        }
+    });
 });
 
 app.post('/create-item', (req, res) => {
+    console.log('user entered /create-item');
     console.log(req.body);
-    res.json({ test: "succes" });
+    const new_reja = req.body
+    db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
+        if (err) {
+            console.log(err);
+            res.end("something went wrong")
+        } else {
+            res.end('succesfully added')
+        }
+    });
 })
-    
+
 app.get('/author', (req, res) => {
     res.render('author', { user: user })
 })

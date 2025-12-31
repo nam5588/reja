@@ -15,19 +15,27 @@
         <div class="jumbotron p-3 shadow-sm" style="background-color: #ffff; border-radius: 10px" ;>
             <form id="create-form" action="/create-item" method="POST">
                 <div class="d-flex align-items-center">
-                    <input name="item" type="text" autofocus autocomplete="off" class="form-control mr-3"
+                    <input name="reja" type="text" autofocus autocomplete="off" class="form-control mr-3"
                         style="flex: 1" />
                     <button class="m-4 btn btn-primary" style="border-radius: 20px">Yangi Reja Qo'shing</button>
                 </div>
             </form>
         </div>
-        <!-- <ol style="margin: 2rem;">
-            <li>Element bir</li>
-            <li>Element ikki</li>
-            <li>Element uch</li>
-            <li>Element tort</li>
-        </ol> -->
-        <button class="m-4 btn btn-danger" style="border-radius: 20px">Hammasini o'chirish</button>
+        <ul id="item-list" class="list-group pb-5 mt-5">
+            <% items.map(function(item){ %>
+
+                <li class="list-group-item list-group-item-info d-flex align-items-center justify-content-between">
+                    <span class="item-text">
+                        <%=item.reja.reja%>
+                    </span>
+                    <div>
+                        <button data-id="<%=item._id%>" class="edit-me btn btn-secondary btn-sm mr-1"> O'zgartirish</button>
+                        <button data-id="<%=item._id%>" class="delete-me btn btn-danger btn-sm">O'chirish</button>
+                    </div>
+                </li>
+                <% }) %>
+        </ul>
+            <button class="m-4 btn btn-danger" style="border-radius: 20px">Hammasini o'chirish</button>
     </div>
 </body>
 

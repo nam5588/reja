@@ -1,33 +1,39 @@
 // MITTASK
-/*
-A-TASK: 
-⭐️ Savol: Shunday 2 parametrli function tuzing, hamda birinchi parametrdagi letterni ikkinchi parametrdagi sozdan qatnashgan sonini return qilishi kerak boladi.
-MASALAN: countLetter("e", "engineer") 3ni return qiladi.
 
-Masalaning yechimi:
+/* B-TASK
+⭐️ Savol: Shunday function tuzing,u 1ta string
+parametrga ega bolsin, hamda osha stringda qatnashgan
+raqamlarni sonini bizga return qilsin. MASALAN:
+countDigits("ad2a54y79wet0sfgb9") 7ni return qiladi.
 */
-
-/*
-//birinchi hayolimga kelgan yechim 
-function countLetter(a, b) {
-    let count = 0;
-    b.split('').forEach(e => {
-        if (e == a) {
-            count++;
-        }
-    });
-    return count
+/* ⭐️ Masalaning yechimi:
+*/
+// 1-case: 
+function countDigits(text) {
 }
-*/
 
-// birinchisi yoqmay qisqartirdim
+const result = countDigits("ad2a54y79wet0sfgb9");
+console.log(result);
+
+//===========================================================
+
+/* A-TASK: 
+⭐️ Savol: Shunday 2 parametrli function tuzing,
+hamda birinchi parametrdagi letterni ikkinchi parametrdagi
+so'zdan qatnashgan sonini return qilishi kerak boladi.
+MASALAN: countLetter("e", "engineer") 3ni return qiladi. */
+
+/* ⭐️ Masalaning yechimi:
+// 1-case: 
+
+let count = 0;
 function countLetter(letter, word) {
-    let count = 0;                  // umumiy sonini aniqlash uchun
-    for (const char of word) {      // wordni har birini ushladik char deb va {} ichi word tugagunicha ishlaydi
-        if(char==letter) count++;   // tekshiryabmiz char va letter lar teng (true) bolsa count ni oshiryabmiz 1ga
+    for (const char of word) {
+        if (char == letter) count++;
     }
-    return count;                   // yuqori mantiqda ishlab qoshilgan count yig'indisini return qildik
+    return count;
 }
 
-const res = countLetter('e', 'engineer');   // call
+const res = countLetter('e', 'engineer');
 console.log(res);
+*/

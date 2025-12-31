@@ -10,8 +10,12 @@ countDigits("ad2a54y79wet0sfgb9") 7ni return qiladi.
 */
 // 1-case: 
 function countDigits(text) {
+    let count = 0;
+    for (const char of text) {
+        if (char >= '0' && char <= '9') count++;
+    }
+    return count
 }
-
 const result = countDigits("ad2a54y79wet0sfgb9");
 console.log(result);
 

@@ -31,7 +31,7 @@ app.use(express.urlencoded({ extended: true }));    // Trad. HTML formdan post q
 app.set("views", "views");      // Folderni korsatdik => 1 o'zgarmaydi 2 folder nomi bilan mos bolishi kerak
 app.set("view engine", "ejs");  // views folder ichidan o'qiydi EJS bilan [biz signal berdik shu engine`da bolaman]
 
-// 4: Routing code      -       qaymoq joyi
+// 4: Routing code
 // hamma / ga kelganlarga pastdagi qator chiqadi
 app.get("/", function (req, res) {
     console.log('user entered /');

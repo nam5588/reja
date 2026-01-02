@@ -1,7 +1,6 @@
 const http = require('http');
 const mongodb = require('mongodb');
 
-let db;
 const connectionString = "mongodb+srv://Adam:RG3XEzD1AgnQkAe9@cluster0.lwmnslt.mongodb.net/Reja?appName=Cluster0";
 
 mongodb.connect(

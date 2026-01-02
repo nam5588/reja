@@ -1,4 +1,5 @@
 console.log("Web Serverni Boshlash");
+const { log } = require("console");
 const express = require("express");
 const app = express(); // expressning objecti olindi
 const fs = require("fs");
@@ -6,6 +7,7 @@ const fs = require("fs");
 //MongoDB 
 
 const db = require("./server").db();
+const mongodb = require("mongodb");
 
 
 let user;
@@ -38,7 +40,7 @@ app.get("/", function (req, res) {
             console.log(err);
             res.end("something went wrong")
         } else {
-            console.log(data);
+            // console.log(data)
             res.render('reja', { items: data });
         }
     });
@@ -52,6 +54,14 @@ app.post('/create-item', (req, res) => {
         // console.log(data.ops);
         res.json(data.ops[0])
     });
+});
+
+app.post("/delete-item", (req, res) => {
+    const id = req.body.id
+    console.log(id)
+    db.collection("plans").deleteOne({ _id: new mongodb.ObjectID(id) }, (err, data) => {
+        res.json({state: "succes"})
+    }) // oddiy stringni mongo_id ga o'tkazdik 
 });
 
 app.get('/author', (req, res) => {

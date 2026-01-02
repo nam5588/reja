@@ -16,7 +16,6 @@ let createField = document.getElementById("create-field")
 
 document.getElementById("create-form").addEventListener('submit', function (e) {
     e.preventDefault()
-
     axios.post("/create-item", { reja: createField.value })
         .then(response => {
             document.getElementById("item-list")
@@ -27,4 +26,26 @@ document.getElementById("create-form").addEventListener('submit', function (e) {
         .catch(err => {
             console.log("Iltimos qayta harakat qiling:", err);
         })
-})
+});
+
+document.addEventListener("click", (e) => {
+    //delete operation
+    if (e.target.classList.contains("delete-me")) {
+        let itemName = e.target.parentElement.parentElement.querySelector(".item-text").innerText;
+        if (confirm(`Aniq ${itemName}ni o'chirmoqchimisiz?`)) {
+            axios
+                .post("/delete-item", { id: e.target.getAttribute("data-id") })
+                .then((response) => {
+                    console.log(response.data);
+                    e.target.parentElement.parentElement.remove()
+                })
+                .catch((err) => { });
+        }
+    }
+
+
+    //edit operation
+    if (e.target.classList.contains("edit-me")) {
+        alert('edit')
+    }
+});

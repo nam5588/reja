@@ -8,7 +8,7 @@ mongodb.connect(
     { useNewUrlParser: true, useUnifiedTopology: true },
     (err, client) => {
         if (err) {
-            console.log("ERROR on connection mongoDB")
+            console.log("ERROR on connection mongoDB", err)
         } else {
             console.log("mongoDB connetion succeed");
             module.exports = client;

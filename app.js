@@ -60,8 +60,23 @@ app.post("/delete-item", (req, res) => {
     const id = req.body.id
     console.log(id)
     db.collection("plans").deleteOne({ _id: new mongodb.ObjectID(id) }, (err, data) => {
-        res.json({state: "succes"})
+        res.json({ state: "succes" })
     }) // oddiy stringni mongo_id ga o'tkazdik 
+});
+
+app.post("/edit-item", (req, res) => {
+    const data = req.body;
+    db.collection("plans").findOneAndUpdate({ _id: new mongodb.ObjectID(data.id) }, { $set: { reja: data.new_input } }, (err, data) => {
+        res.json({ state: "succes" });
+    })
+})
+
+app.post("/delete-all", (req, res) => {
+    if (req.body.delete_all) {
+        db.collection("plans").deleteMany(() => {
+            res.json({ state: "all plans deleted" })
+        });
+    }
 });
 
 app.get('/author', (req, res) => {

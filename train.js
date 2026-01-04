@@ -1,17 +1,35 @@
 // MITTASK
+/* D-TASK
+⭐️ Savol: Shunday function tuzing, u 2ta string parametr ega bolsin, 
+hamda agar har ikkala string bir hil harflardan iborat 
+bolsa true aks holda false qaytarsin
+MASALAN checkContent("mitgroup", "gmtiprou") return qiladi true;
+*/
+/* ⭐️ Masalaning yechimi:
+// 1-case:
+*/
+
+function checkContent(text1, text2) {
+    const sorted1 = text1.split('').sort().join('')
+    const sorted2 = text2.split('').sort().join('')
+
+    return sorted1 === sorted2;
+}
+console.log(checkContent("mitgroup", "gmtiprou"))
+
+//===========================================================
 
 /* C-TASK
-⭐️ Savol: Shunday class tuzing tuzing nomi Shop, 
-va uni constructoriga 3 hil mahsulot pass bolsin, hamda classning 
-3ta methodi bolsin, biri qoldiq, biri sotish va biri qabul. 
+⭐️ Savol: Shunday class tuzing tuzing nomi Shop,
+va uni constructoriga 3 hil mahsulot pass bolsin, hamda classning
+3ta methodi bolsin, biri qoldiq, biri sotish va biri qabul.
 Har bir method ishga tushgan vaqt ham log qilinsin.
-MASALAN: const shop = new Shop(4, 5, 2); shop.qoldiq() 
-return hozir 20:40da 4ta non, 5ta lagmon va 2ta cola mavjud! 
-shop.sotish('non', 3) & shop.qabul('cola', 4) & shop.qoldiq() 
+MASALAN: const shop = new Shop(4, 5, 2); shop.qoldiq()
+return hozir 20:40da 4ta non, 5ta lagmon va 2ta cola mavjud!
+shop.sotish('non', 3) & shop.qabul('cola', 4) & shop.qoldiq()
 return hozir 20:50da 1ta non, 5ta lagmon va 6ta cola mavjud!
 */
 /* ⭐️ Masalaning yechimi:
-*/
 // 1-case:
 const moment = require('moment')
 
@@ -40,9 +58,9 @@ console.log(shop.qoldiq());
 console.log(shop.sotish('non', 3));
 console.log(shop.qabul('cola', 4));
 console.log(shop.qoldiq());
+*/
 
 //===========================================================
-
 
 /* B-TASK
 ⭐️ Savol: Shunday function tuzing,u 1ta string

@@ -1,5 +1,4 @@
 console.log("Web Serverni Boshlash");
-const { log } = require("console");
 const express = require("express");
 const app = express(); // expressning objecti olindi
 const fs = require("fs");
@@ -19,11 +18,10 @@ fs.readFile("database/user.json", "utf-8", (err, data) => {
     }
 })
 
-// 1: Kirish code                       // Bu qismdagi use bu => DP => bog'lab beryabdi
-app.use(express.static("public"));      // Clientlar uchun public folderni ochib berdik
-app.use(express.json());                // Kirib kelayotgan json formatni objectga uguradi
-app.use(express.urlencoded({ extended: true }));    // Trad. HTML formdan post qilingan narsalarni togri qabul qiladi
-
+// 1: Kirish code                               // Bu qismdagi use bu => DP => bog'lab beryabdi
+app.use(express.static("public"));                      // Clientlar uchun public folderni ochib berdik
+app.use(express.json());                                // Kirib kelayotgan json formatni objectga uguradi
+app.use(express.urlencoded({ extended: true }));        // Trad. HTML formdan post qilingan narsalarni togri qabul qiladi
 // 2: Session code
 
 // BSSR backend side site rendering || backendda fronted qurish
@@ -48,11 +46,11 @@ app.get("/", function (req, res) {
 
 app.post('/create-item', (req, res) => {
     console.log('user entered /create-item');
-    console.log(req.body);
+    // console.log(req.body);
     const new_reja = req.body.reja
     db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
-        // console.log(data.ops);
-        res.json(data.ops[0])
+        // console.log(data.ops[0]);
+        res.json(data.ops[0]);
     });
 });
 

@@ -1,21 +1,47 @@
 // MITTASK
+
+/* E-TASK
+⭐️ Savol: Shunday function tuzing, u bitta string argumentni 
+qabul qilib osha stringni teskari qilib return qilsin.
+MASALAN: getReverse("hello") return qilsin "olleh" 
+*/
+/* ⭐️ Masalaning yechimi: 
+// 1-case:
+*/
+function getReverse(text){ 
+    return text.split('').reverse().join('')
+}
+console.log(getReverse("hello"));
+/* 2-case
+function getReverse(text) {
+    let reverse = [];
+    for (let i = 0; i < text.length; i++) {
+        reverse.unshift(text[i])
+    }
+    return reverse.join('')
+}
+console.log(getReverse("hello"));
+*/
+
+//===========================================================
+
 /* D-TASK
-⭐️ Savol: Shunday function tuzing, u 2ta string parametr ega bolsin, 
-hamda agar har ikkala string bir hil harflardan iborat 
+⭐️ Savol: Shunday function tuzing, u 2ta string parametr ega bolsin,
+hamda agar har ikkala string bir hil harflardan iborat
 bolsa true aks holda false qaytarsin
 MASALAN checkContent("mitgroup", "gmtiprou") return qiladi true;
 */
 /* ⭐️ Masalaning yechimi:
 // 1-case:
-*/
 
 function checkContent(text1, text2) {
     const sorted1 = text1.split('').sort().join('')
     const sorted2 = text2.split('').sort().join('')
 
     return sorted1 === sorted2;
-}
+};
 console.log(checkContent("mitgroup", "gmtiprou"))
+*/
 
 //===========================================================
 

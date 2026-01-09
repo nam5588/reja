@@ -1,17 +1,41 @@
 // MITTASK
-
-/* E-TASK
-⭐️ Savol: Shunday function tuzing, u bitta string argumentni 
-qabul qilib osha stringni teskari qilib return qilsin.
-MASALAN: getReverse("hello") return qilsin "olleh" 
+/* F-TASK
+⭐️ Savol: Yagona string argumentga ega findDoublers nomli function tuzing
+Agar stringda bittadan ortiq bir xil harflar ishtirok etgan bo'lsa
+true yokida false natija qaytarsin.
+MASALAN: findDoublers("hello"); natija true qaytadi. 
+Sababi ikki marotaba takrorlangan 'll' harfi mavjud!
 */
 /* ⭐️ Masalaning yechimi: 
-// 1-case:
+/* // 1-case:
 */
-function getReverse(text){ 
+
+function findDoublers(text) {
+    const checked = []
+    for (char of text) {
+        if (checked.includes(char)) {
+            return true
+        } else {
+            checked.push(char);
+        }
+    }
+    return false
+}
+
+console.log(findDoublers("hello"));
+
+/* E-TASK
+⭐️ Savol: Shunday function tuzing, u bitta string argumentni
+qabul qilib osha stringni teskari qilib return qilsin.
+MASALAN: getReverse("hello") return qilsin "olleh"
+*/
+/* ⭐️ Masalaning yechimi:
+// 1-case:
+function getReverse(text){
     return text.split('').reverse().join('')
 }
 console.log(getReverse("hello"));
+*/
 /* 2-case
 function getReverse(text) {
     let reverse = [];
